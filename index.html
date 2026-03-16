@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main container for the password checker (MODIFIED: Will be styled as a card) -->
+    <div class="container">
+        <h2>Password Strength Checker</h2>
+        <!-- Input field for the password -->
+        <input type="password" id="password-input" placeholder="Type your password here...">
+        
+        <!-- Area to display the strength result (Weak, Medium, Strong) -->
+        <div id="strength-message" class="message"></div>
+        
+        <!-- MODIFIED: Replaced generic suggestions with a Perfect Validator System -->
+        <!-- Shows each requirement in a list with real-time feedback -->
+        <ul class="validator-list">
+            <li id="rule-length" class="invalid"><span>✗</span> At least 6 characters</li>
+            <li id="rule-lowercase" class="invalid"><span>✗</span> At least one lowercase letter</li>
+            <li id="rule-uppercase" class="invalid"><span>✗</span> At least one uppercase letter</li>
+            <li id="rule-number" class="invalid"><span>✗</span> At least one number</li>
+            <li id="rule-special" class="invalid"><span>✗</span> At least one special character</li>
+        </ul>
+    </div>
+    
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

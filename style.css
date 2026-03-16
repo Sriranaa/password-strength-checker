@@ -1,0 +1,131 @@
+/* Import a modern font from Google Fonts (MODIFIED: Changed to Poppins for a more attractive look) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Reset default margins and paddings, use border-box for consistent sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* MODIFIED: Replaced plain background with an animated modern gradient background */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Smooth, animated gradient */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* MODIFIED: Improved card-style layout with glassmorphism and hover effects */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 16px; /* slightly rounder */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    backdrop-filter: blur(10px); /* Glassmorphism touch */
+    transition: transform 0.3s ease; /* added transition */
+}
+
+/* Added subtle lift effect on hover */
+.container:hover {
+    transform: translateY(-5px);
+}
+
+/* Heading style */
+h2 {
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Modern styling for the password input field */
+#password-input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1.05rem;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+    background: #f9f9f9;
+}
+
+/* Highlight input field on focus with smooth transition */
+#password-input:focus {
+    border-color: #23a6d5; /* matching gradient blue */
+    background: #fff;
+    box-shadow: 0 0 10px rgba(35, 166, 213, 0.2);
+}
+
+/* Styling for the strength message */
+.message {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    min-height: 28px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Strength specific colors */
+.weak { color: #ff4757; }
+.medium { color: #ffa502; }
+.strong { color: #2ed573; }
+
+/* MODIFIED: Styling for the new validator list system */
+.validator-list {
+    list-style: none;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.validator-list li {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+/* Style for the checkmark/cross icon span */
+.validator-list li span {
+    display: inline-block;
+    width: 20px;
+    font-weight: bold;
+    margin-right: 8px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* MODIFIED: Validation states (Green for valid, Red for invalid) */
+.validator-list li.valid {
+    color: #2ed573;
+}
+.validator-list li.valid span {
+    color: #2ed573;
+    transform: scale(1.1); /* slight pop effect for completion */
+}
+
+.validator-list li.invalid {
+    color: #ff4757;
+}
+.validator-list li.invalid span {
+    color: #ff4757;
+}
